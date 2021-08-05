@@ -90,18 +90,17 @@ hr{
 .courses{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: 25px;
     
 }
 .single-course{
-    margin-right: 20px;
     box-shadow: 3px 3px 3px lightgrey;
     border-radius: 20px;
     padding: 10px  20px;
 
 }
 .course-banner img{
-    width: 224px;
-    height: 104px;
+    width: 100%;
 }
 .course-author{
     color: #ED6B4F;
@@ -123,4 +122,50 @@ hr{
     background-color: #FEE5DF;
     border-radius: 30px;
     padding: 5px 10px;
+}
+
+/* --------------------------------
+        Media Queris Style
+--------------------------------- */
+
+/* Mobile Devices */
+@media only screen and ( max-width:688px ) {
+    .container{
+        width: 100%;
+    }
+    .players{
+        grid-template-columns: repeat(2, 1fr);  
+    }
+    .blogs, .courses{
+        grid-template-columns: repeat(1, 1fr);
+        grid-row-gap: 20px; 
+    }
+    .blog{
+        box-shadow: 3px 3px 3px lightgrey;
+        border-radius: 20px;
+        padding: 10px  20px;
+    }
+    .player, .blog{
+        flex-direction: column;
+    }
+}
+
+/* Medium Diveces */
+@media only screen and (min-width:668px) and (max-width:992px) { 
+    .container{
+        width: 100%;
+    }
+    .players, .courses{
+        grid-template-columns: repeat(2, 1fr);
+        grid-row-gap: 25px;
+    }
+    .blogs{
+        grid-template-columns: repeat(1, 1fr);
+        grid-row-gap: 20px; 
+    }
+    .blog{
+        box-shadow: 3px 3px 3px lightgrey;
+        border-radius: 20px;
+        padding: 10px  20px;
+    }
 }
